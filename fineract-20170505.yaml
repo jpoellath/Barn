@@ -1,0 +1,709 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: accounting
+    name: accounting
+  spec:
+    ports:
+    - name: "8084"
+      port: 8084
+      targetPort: 8084
+    selector:
+      io.kompose.service: accounting
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: activemq
+    name: activemq
+  spec:
+    ports:
+    - name: "61616"
+      port: 61616
+      targetPort: 61616
+    - name: "8161"
+      port: 8161
+      targetPort: 8161
+    - name: "61614"
+      port: 61614
+      targetPort: 61614
+    - name: "61613"
+      port: 61613
+      targetPort: 61613
+    selector:
+      io.kompose.service: activemq
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: bigbrother
+    name: bigbrother
+  spec:
+    ports:
+    - name: "8087"
+      port: 8087
+      targetPort: 8087
+    selector:
+      io.kompose.service: bigbrother
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: cassandra
+    name: cassandra
+  spec:
+    ports:
+    - name: "9042"
+      port: 9042
+      targetPort: 9042
+    selector:
+      io.kompose.service: cassandra
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: config
+    name: config
+  spec:
+    ports:
+    - name: "8888"
+      port: 8888
+      targetPort: 8888
+    selector:
+      io.kompose.service: config
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: customer
+    name: customer
+  spec:
+    ports:
+    - name: "8083"
+      port: 8083
+      targetPort: 8083
+    selector:
+      io.kompose.service: customer
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: discovery
+    name: discovery
+  spec:
+    ports:
+    - name: "8761"
+      port: 8761
+      targetPort: 8761
+    selector:
+      io.kompose.service: discovery
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: fims-web-app
+    name: fims-web-app
+  spec:
+    ports:
+    - name: "80"
+      port: 80
+      targetPort: 80
+    selector:
+      io.kompose.service: fims-web-app
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: identity
+    name: identity
+  spec:
+    ports:
+    - name: "8081"
+      port: 8081
+      targetPort: 8081
+    selector:
+      io.kompose.service: identity
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: mariadb
+    name: mariadb
+  spec:
+    ports:
+    - name: "3306"
+      port: 3306
+      targetPort: 3306
+    selector:
+      io.kompose.service: mariadb
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: office
+    name: office
+  spec:
+    ports:
+    - name: "8082"
+      port: 8082
+      targetPort: 8082
+    selector:
+      io.kompose.service: office
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: portfolio
+    name: portfolio
+  spec:
+    ports:
+    - name: "8085"
+      port: 8085
+      targetPort: 8085
+    selector:
+      io.kompose.service: portfolio
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: provisioner
+    name: provisioner
+  spec:
+    ports:
+    - name: "9090"
+      port: 9090
+      targetPort: 9090
+    selector:
+      io.kompose.service: provisioner
+  status:
+    loadBalancer: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: accounting
+    name: accounting
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: accounting
+      spec:
+        containers:
+        - args:
+          - java
+          - -jar
+          - app.jar
+          env:
+          - name: SPRING_CLOUD_CONFIG_URI
+            value: http://config:8888
+          - name: SPRING_PROFILES_ACTIVE
+            value: docker
+          image: senacorbitc/accounting:20170505
+          name: accounting
+          ports:
+          - containerPort: 8084
+          resources: {}
+          workingDir: /
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: activemq
+    name: activemq
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: activemq
+      spec:
+        containers:
+        - image: rmohr/activemq:latest
+          name: activemq
+          ports:
+          - containerPort: 61616
+          - containerPort: 8161
+          - containerPort: 61614
+          - containerPort: 61613
+          resources: {}
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: bigbrother
+    name: bigbrother
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: bigbrother
+      spec:
+        containers:
+        - args:
+          - java
+          - -jar
+          - app.jar
+          env:
+          - name: SPRING_CLOUD_CONFIG_URI
+            value: http://config:8888
+          - name: SPRING_PROFILES_ACTIVE
+            value: docker
+          image: senacorbitc/bigbrother:20170505
+          name: bigbrother
+          ports:
+          - containerPort: 8087
+          resources: {}
+          workingDir: /
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: cassandra
+    name: cassandra
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: cassandra
+      spec:
+        containers:
+        - image: cassandra:3.0.1
+          name: cassandra
+          ports:
+          - containerPort: 9042
+          resources: {}
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: config
+    name: config
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: config
+      spec:
+        containers:
+        - env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: native
+          image: senacorbitc/config:20170505
+          name: config
+          ports:
+          - containerPort: 8888
+          resources: {}
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: customer
+    name: customer
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: customer
+      spec:
+        containers:
+        - args:
+          - java
+          - -jar
+          - app.jar
+          env:
+          - name: SPRING_CLOUD_CONFIG_URI
+            value: http://config:8888
+          - name: SPRING_PROFILES_ACTIVE
+            value: docker
+          image: senacorbitc/customer:20170505
+          name: customer
+          ports:
+          - containerPort: 8083
+          resources: {}
+          workingDir: /
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: discovery
+    name: discovery
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: discovery
+      spec:
+        containers:
+        - args:
+          - java
+          - -jar
+          - app.jar
+          env:
+          - name: eureka.instance.preferIpAdress
+            value: "true"
+          image: senacorbitc/discovery:20170505
+          name: discovery
+          ports:
+          - containerPort: 8761
+          resources: {}
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: fims-web-app
+    name: fims-web-app
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: fims-web-app
+      spec:
+        containers:
+        - env:
+          - name: ACCOUNTING_SERVICE_URL
+            value: accounting:8084
+          - name: CUSTOMER_SERVICE_URL
+            value: customer:8083
+          - name: IDENTITY_SERVICE_URL
+            value: identity:8081
+          - name: OFFICE_SERVICE_URL
+            value: office:8082
+          - name: PORTFOLIO_SERVICE_URL
+            value: portfolio:8085
+          image: senacorbitc/fims-web-app:20170505
+          name: fims-web-app
+          ports:
+          - containerPort: 80
+          resources: {}
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: identity
+    name: identity
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: identity
+      spec:
+        containers:
+        - args:
+          - java
+          - -jar
+          - app.jar
+          env:
+          - name: SPRING_CLOUD_CONFIG_URI
+            value: http://config:8888
+          - name: SPRING_PROFILES_ACTIVE
+            value: docker
+          image: senacorbitc/identity:20170505
+          name: identity
+          ports:
+          - containerPort: 8081
+          resources: {}
+          workingDir: /
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: mariadb
+    name: mariadb
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: mariadb
+      spec:
+        containers:
+        - env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: mysql
+          image: mysql:5.7.18
+          name: mariadb
+          ports:
+          - containerPort: 3306
+          resources: {}
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: office
+    name: office
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: office
+      spec:
+        containers:
+        - args:
+          - java
+          - -jar
+          - app.jar
+          env:
+          - name: SPRING_CLOUD_CONFIG_URI
+            value: http://config:8888
+          - name: SPRING_PROFILES_ACTIVE
+            value: docker
+          image: senacorbitc/office:20170505
+          name: office
+          ports:
+          - containerPort: 8082
+          resources: {}
+          workingDir: /
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: portfolio
+    name: portfolio
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: portfolio
+      spec:
+        containers:
+        - args:
+          - java
+          - -jar
+          - app.jar
+          env:
+          - name: SPRING_CLOUD_CONFIG_URI
+            value: http://config:8888
+          - name: SPRING_PROFILES_ACTIVE
+            value: docker
+          image: senacorbitc/portfolio:20170505
+          name: portfolio
+          ports:
+          - containerPort: 8085
+          resources: {}
+          workingDir: /
+        restartPolicy: Always
+  status: {}
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      kompose.cmd: kompose --file docker-compose-hub.yml convert -o fineract-20170505.yaml
+      kompose.version: 1.11.0 ()
+    creationTimestamp: null
+    labels:
+      io.kompose.service: provisioner
+    name: provisioner
+  spec:
+    replicas: 1
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          io.kompose.service: provisioner
+      spec:
+        containers:
+        - args:
+          - java
+          - -jar
+          - app.jar
+          env:
+          - name: SPRING_CLOUD_CONFIG_URI
+            value: http://config:8888
+          - name: SPRING_PROFILES_ACTIVE
+            value: docker
+          image: senacorbitc/provisioner:20170505
+          name: provisioner
+          ports:
+          - containerPort: 9090
+          resources: {}
+          workingDir: /
+        restartPolicy: Always
+  status: {}
+kind: List
+metadata: {}
+
