@@ -1,0 +1,26 @@
+node {
+   def projektname = 'lang'
+   stage('Preparation') { // for display purposes
+      checkout([$class: 'GitSCM', 
+        branches: [[name: '*/develop']], 
+        doGenerateSubmoduleConfigurations: false, 
+        extensions: [[$class: 'CleanCheckout']], 
+        submoduleCfg: [], 
+        userRemoteConfigs: [[url: "https://github.com/apache/fineract-cn-${projektname}.git"]]
+      ])
+   }
+   stage('Build') {
+      sh "./gradlew publisToMavenLocal"
+   }
+   stage('Publish') {
+        pom = readMavenPom file: "build/publications/${projektname}Publication/pom-default.xml"
+        withMaven(
+            maven: 'M3',
+            mavenSettingsConfig: 'db0fb507-1819-4b63-96de-dbfde68370bc',
+            globalMavenSettingsConfig: 'ba3dbbdc-43c1-4667-b252-b9505a20037a'
+        ) {
+            sh "mvn deploy:deploy-file -DrepositoryId=fineract-maven -DgeneratePom=false -Durl=http://nexus:8081/repository/fineract-maven/ -DgroupId=${pom.groupId} -DartefactId=${pom.artifactId} -Dversion=${pom.version} -Dpackaging=jar -DpomFile=build/publications/${pom.artifactId}Publication/pom-default.xml -Dfile=build/libs/${pom.artifactId}-${pom.version}.jar"
+        }
+        
+   }
+}
