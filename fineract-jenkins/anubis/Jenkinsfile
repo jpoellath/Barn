@@ -1,6 +1,6 @@
 node {
-   def projektname = 'crypto'
-   def pomDir = 'build/publications/babel/pom-default.xml'
+   def projektname = 'anubis'
+   def pomDir = 'library/build/publications/libraryPublication/pom-default.xml'
    stage('Preparation') { // for display purposes
       checkout([$class: 'GitSCM', 
         branches: [[name: '*/develop']], 
