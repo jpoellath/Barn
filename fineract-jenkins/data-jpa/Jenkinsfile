@@ -1,5 +1,6 @@
 node {
    def projektname = 'data-jpa'
+   def pomDir = 'build/publications/databaseConnector/pom-default.xml'
    stage('Preparation') { // for display purposes
       checkout([$class: 'GitSCM', 
         branches: [[name: '*/develop']], 
@@ -13,13 +14,13 @@ node {
       sh "./gradlew publisToMavenLocal"
    }
    stage('Publish') {
-        pom = readMavenPom file: "build/publications/databaseConnector/pom-default.xml"
+        pom = readMavenPom file: "${pomDir}"
         withMaven(
             maven: 'M3',
             mavenSettingsConfig: 'db0fb507-1819-4b63-96de-dbfde68370bc',
             globalMavenSettingsConfig: 'ba3dbbdc-43c1-4667-b252-b9505a20037a'
         ) {
-            sh "mvn deploy:deploy-file -DrepositoryId=fineract-maven -DgeneratePom=false -Durl=http://nexus:8081/repository/fineract-maven/ -DgroupId=${pom.groupId} -DartefactId=${pom.artifactId} -Dversion=${pom.version} -Dpackaging=jar -DpomFile=build/publications/${pom.artifactId}Publication/pom-default.xml -Dfile=build/libs/${pom.artifactId}-${pom.version}.jar"
+            sh "mvn deploy:deploy-file -DrepositoryId=fineract-maven -DgeneratePom=false -Durl=http://nexus:8081/repository/fineract-maven/ -DgroupId=${pom.groupId} -DartefactId=${pom.artifactId} -Dversion=${pom.version} -Dpackaging=jar -DpomFile=${pomDir} -Dfile=build/libs/${pom.artifactId}-${pom.version}.jar"
         }
         
    }
