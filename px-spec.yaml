@@ -1,4 +1,4 @@
-# SOURCE: http://install.portworx.com/?c=px-rancher&k=etcd://10.90.0.89:2379&kbVer=1.8.10-rancher&s=/dev/sdb
+# SOURCE: http://install.portworx.com/?c=px&k=etcd://10.90.0.89:2379&kbVer=1.8.10&s=/dev/sdb
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -264,7 +264,7 @@ spec:
         - --policy-configmap=stork-config
         - --policy-configmap-namespace=kube-system
         - --lock-object-name=stork-scheduler
-        image: gcr.io/google_containers/kube-scheduler-amd64:v1.8.10-rancher
+        image: gcr.io/google_containers/kube-scheduler-amd64:v1.8.10
         livenessProbe:
           httpGet:
             path: /healthz
@@ -344,7 +344,7 @@ metadata:
   name: portworx
   namespace: kube-system
   annotations:
-    portworx.com/install-source: "http://install.portworx.com/?c=px-rancher&k=etcd://10.90.0.89:2379&kbVer=1.8.10-rancher&s=/dev/sdb"
+    portworx.com/install-source: "http://install.portworx.com/?c=px&k=etcd://10.90.0.89:2379&kbVer=1.8.10&s=/dev/sdb"
 spec:
   minReadySeconds: 0
   updateStrategy:
@@ -374,7 +374,7 @@ spec:
           image: portworx/oci-monitor:1.3.1.1
           imagePullPolicy: Always
           args:
-            ["-k", "etcd://10.90.0.89:2379", "-c", "px-rancher", "-s", "/dev/sdb", 
+            ["-k", "etcd://10.90.0.89:2379", "-c", "px", "-s", "/dev/sdb", 
              "-x", "kubernetes"]
           env:
             - name: "PX_TEMPLATE_VERSION"
