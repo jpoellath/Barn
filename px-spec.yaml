@@ -1,4 +1,4 @@
-# SOURCE: http://install.portworx.com/?c=px-dev&k=etcd://10.90.0.89:2679&kbver=1.8
+# SOURCE: http://install.portworx.com/?c=px-dev&k=etcd://10.90.0.89:2679&kbver=1.8.10
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -264,7 +264,7 @@ spec:
         - --policy-configmap=stork-config
         - --policy-configmap-namespace=kube-system
         - --lock-object-name=stork-scheduler
-        image: gcr.io/google_containers/kube-scheduler-amd64:v1.8
+        image: gcr.io/google_containers/kube-scheduler-amd64:v1.8.10
         livenessProbe:
           httpGet:
             path: /healthz
@@ -344,7 +344,7 @@ metadata:
   name: portworx
   namespace: kube-system
   annotations:
-    portworx.com/install-source: "http://install.portworx.com/?c=px-dev&k=etcd://10.90.0.89:2679&kbver=1.8"
+    portworx.com/install-source: "http://install.portworx.com/?c=px-dev&k=etcd://10.90.0.89:2679&kbver=1.8.10"
 spec:
   minReadySeconds: 0
   updateStrategy:
