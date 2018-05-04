@@ -17,7 +17,7 @@ metadata:
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
-  namespace: kube-system
+  namespace: default
   name: openebs-maya-operator
 rules:
 - apiGroups: ["*"]
@@ -47,11 +47,11 @@ kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
   name: openebs-maya-operator
-  namespace: kube-system
+  namespace: default
 subjects:
 - kind: ServiceAccount
   name: openebs-maya-operator
-  namespace: kube-system
+  namespace: default
 - kind: User
   name: system:serviceaccount:default:default
   apiGroup: rbac.authorization.k8s.io
@@ -64,7 +64,7 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: maya-apiserver
-  namespace: kube-system
+  namespace: default
 spec:
   replicas: 1
   template:
@@ -117,7 +117,7 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: openebs-provisioner
-  namespace: kube-system
+  namespace: default
 spec:
   replicas: 1
   template:
