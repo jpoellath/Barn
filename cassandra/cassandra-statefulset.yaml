@@ -62,14 +62,14 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: status.podIP
-        readinessProbe:
-          exec:
-            command:
-            - /bin/bash
-            - -c
-            - /ready-probe.sh
-          initialDelaySeconds: 120 
-          timeoutSeconds: 15
+        #readinessProbe:
+        #  exec:
+        #    command:
+        #    - /bin/bash
+        #    - -c
+        #    - /ready-probe.sh
+        #  initialDelaySeconds: 120 
+        #  timeoutSeconds: 15
         # These volume mounts are persistent. They are like inline claims,
         # but not exactly because the names need to match exactly one of
         # the stateful pod volumes.
